@@ -82,17 +82,44 @@
 
 				<div class="agree-box">
 					<label>
-						<input id="terms" type="checkbox" required aria-required="true" />
-						I recognize that Sherwood no longer offers equipment rentals. I am seeking event production
-						with delivery and setup.
+						<div id="finalAgree">
+							<span></span>
+							<input id="terms" type="checkbox" required aria-required="true" />
+							<div>
+								I recognize that Sherwood no longer offers equipment rentals. I am seeking event
+								production with delivery and setup.
+							</div>
+						</div>
 					</label>
 				</div>
 
 				<button type="submit">Submit Request</button>
 			</form>
-		{:else}
-			<h2>Installations Form</h2>
-		{/if}
+		{:else if eventType == 'installations'}
+			<form>
+				<h2>Request an Installation</h2>
+				<formgroup>
+					<label
+						>Name
+						<input type="text" name="name" />
+					</label>
+					<label
+						>Email
+						<input type="text" name="email" />
+					</label>
+					<label
+						>Subject
+						<input type="text" name="email" />
+					</label>
+				</formgroup>
+
+				<label for="description"
+					>Message
+					<textarea id="description" name="event-description" class="description"></textarea>
+				</label>
+				<input type="submit" />
+			</form>
+		{:else}{/if}
 	</article>
 </div>
 
@@ -144,7 +171,14 @@
 	}
 
 	button[type='submit'] {
-		margin-top: 1rem; /s* Provide some spacing above the submit button */
+		margin-top: 1rem; /* Provide some spacing above the submit button */
+	}
+
+	#finalAgree {
+		display: grid;
+		grid-template-columns: 0.4fr 0.7fr 14fr;
+		gap: 0.5rem;
+		align-items: center;
 	}
 
 	/* Media queries for responsive design */

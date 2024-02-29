@@ -30,6 +30,7 @@
   "dependencies": {
     "@picocss/pico": "next",
     "@vercel/analytics": "^1.2.2",
+    "mailersend": "^2.2.0",
     "swiper": "^11.0.5"
   }
 }
