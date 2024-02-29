@@ -38,6 +38,7 @@
 	main {
 		margin: 0;
 		padding: 0;
+		min-height: 85dvh;
 	}
 	nav {
 		padding-top: 1rem;

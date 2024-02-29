@@ -14,11 +14,13 @@
 				<Hamburger bind:isOpen={mobileMenuOpen} />
 			</div>
 		</div>
-		<ul class="mobile-menu {mobileMenuOpen ? 'open' : ''}">
-			<li><a href="/production">Event Production</a></li>
-			<li><a href="/installations">Installations</a></li>
-			<li><a href="/contact">Contact Us</a></li>
-		</ul>
+		<div class="menu-items">
+			<ul class="mobile-menu {mobileMenuOpen ? 'open' : ''}">
+				<li><a href="/production">Event Production</a></li>
+				<li><a href="/installations">Installations</a></li>
+				<li><a href="/contact">Contact Us</a></li>
+			</ul>
+		</div>
 	</nav>
 </header>
 
@@ -42,15 +44,16 @@
 		cursor: pointer;
 	}
 
+	.menu-items {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
 	.mobile-menu {
 		display: none;
+		font-size: 1.5rem;
 		flex-direction: column;
-		background-color: white;
-		position: absolute;
-		top: 60px; /* Adjust based on your header height */
-		width: 100%;
-		left: 0;
-		z-index: 9; /* Lower than the logo and hamburger menu */
 		overflow: hidden;
 		max-height: 0;
 		transition: max-height 0.5s ease-in-out;
