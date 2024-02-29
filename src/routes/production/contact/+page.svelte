@@ -6,7 +6,7 @@
 	<article>
 		<h1>Request Event Production</h1>
 
-		<form>
+		<form method="POST">
 			<fieldset>
 				<label for="name"
 					>Name
