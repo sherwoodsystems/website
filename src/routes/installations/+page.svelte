@@ -1,5 +1,5 @@
 <div class="container">
-	<img class="hero" src="/UWConvocation.jpeg" alt="UW Convocation" />
+	<img class="hero" src="/KnoxToronto.jpg" alt="UW Convocation" />
 	<h1>Installations</h1>
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum ligula erat, sed iaculis
@@ -21,9 +21,9 @@
 <style>
 	.hero {
 		object-fit: cover;
-		object-position: top;
+		object-position: bottom;
 		width: 100%;
-		height: 400px;
+		height: 800px;
 	}
 
 	h1 {

@@ -5,94 +5,73 @@
 <div class="container">
 	<article>
 		<h1>Get a quote</h1>
-		<fieldset>
-			<label>
-				<p>Event production or installations?</p>
-				<select
-					bind:value={eventType}
-					name="form-select"
-					aria-label="Do you need production or installations?"
-					required
-				>
-					<option selected disabled value="">
-						Would you like a quote for an event or a permanent installation?
-					</option>
-					<option value="production">Event Production</option>
-					<option value="installations">Installations</option>
-				</select>
+
+		<form>
+			<fieldset>
+				<label for="name"
+					>Name
+					<input type="text" id="name" name="name" />
+				</label>
+				<label for="email"
+					>Email
+					<input type="email" id="email" name="email" />
+				</label>
+			</fieldset>
+
+			<h3>Event Information</h3>
+			<label for="event-name"
+				>Event Name
+				<input type="text" id="event-name" name="event-name" />
 			</label>
-		</fieldset>
+			<label for="venue"
+				>Venue
+				<input type="text" id="venue" name="venue" />
+			</label>
 
-		{#if eventType == 'production'}
-			<form>
-				<fieldset>
-					<label for="name"
-						>Name
-						<input type="text" id="name" name="name" />
-					</label>
-					<label for="email"
-						>Email
-						<input type="email" id="email" name="email" />
-					</label>
-				</fieldset>
-
-				<h3>Event Information</h3>
-				<label for="event-name"
-					>Event Name
-					<input type="text" id="event-name" name="event-name" />
+			<fieldset role="group">
+				<label for="event-start-date"
+					>Event Start Date
+					<input type="date" id="event-start-date" name="event-date" />
 				</label>
-				<label for="venue"
-					>Venue
-					<input type="text" id="venue" name="venue" />
+				<label for="start-time"
+					>Start Time
+					<input type="time" id="start-time" name="event-time" />
 				</label>
+			</fieldset>
 
-				<fieldset role="group">
-					<label for="event-start-date"
-						>Event Start Date
-						<input type="date" id="event-start-date" name="event-date" />
-					</label>
-					<label for="start-time"
-						>Start Time
-						<input type="time" id="start-time" name="event-time" />
-					</label>
-				</fieldset>
+			<h3>Services Required</h3>
+			<label>
+				<input name="lighting" type="checkbox" />
+				Lighting
+			</label>
+			<label>
+				<input name="sound" type="checkbox" />
+				Sound System
+			</label>
+			<label>
+				<input name="video" type="checkbox" />
+				Projection or Live Video
+			</label>
+			<label>
+				<input name="help" type="checkbox" />
+				I need help designing a plan for the event.
+			</label>
 
-				<h3>Services Required</h3>
+			<label for="description"
+				><h3>Description of Event</h3>
+				<textarea id="description" name="event-description" class="description"></textarea>
+			</label>
+
+			<div class="agree-box">
 				<label>
-					<input name="lighting" type="checkbox" />
-					Lighting
+					<input id="terms" type="checkbox" required aria-required="true" />
+					I recognize that Sherwood no longer offers equipment rentals. I am seeking event production
+					with delivery and setup.
 				</label>
-				<label>
-					<input name="sound" type="checkbox" />
-					Sound System
-				</label>
-				<label>
-					<input name="video" type="checkbox" />
-					Projection or Live Video
-				</label>
-				<label>
-					<input name="help" type="checkbox" />
-					I need help designing a plan for the event.
-				</label>
+			</div>
 
-				<label for="description"
-					><h3>Description of Event</h3>
-					<textarea id="description" name="event-description" class="description"></textarea>
-				</label>
-
-				<div class="agree-box">
-					<label>
-						<input id="terms" type="checkbox" required aria-required="true" />
-						I recognize that Sherwood no longer offers equipment rentals. I am seeking event production
-						with delivery and setup.
-					</label>
-				</div>
-
-				<button type="submit">Submit Request</button>
-			</form>
-		{:else}
-			<h2>Installations Form</h2>
-		{/if}
+			<button type="submit">Submit Request</button>
+		</form>
 	</article>
 </div>
 

@@ -47,10 +47,11 @@
 	li a {
 		color: #f2682a;
 		font-weight: 500;
+		cursor: pointer;
 	}
 	li a:hover {
-		text-decoration: none;
-		font-weight: bolder;
+		text-decoration: underline;
+		cursor: pointer;
 	}
 	footer {
 		background: black;

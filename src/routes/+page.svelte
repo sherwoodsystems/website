@@ -49,6 +49,9 @@
 		<div class="swiper-slide">
 			<img src="hero/3.jpg" alt="Slide 3" />
 		</div>
+		<div class="swiper-slide">
+			<img src="hero/4.jpg" alt="Slide 3" />
+		</div>
 	</div>
 	<!-- If we need navigation buttons -->
 	<div class="swiper-button-prev">prev</div>
@@ -68,7 +71,7 @@
 		<article>
 			<h3>Installations</h3>
 			<p>Looking for a new sound system, projector, lighting, or anything? Let us know!</p>
-			<button onclick={navigateToProd}>Contact Installations</button>
+			<button onclick={navigateToInstallations}>Contact Installations</button>
 		</article>
 	</div>
 </div>
