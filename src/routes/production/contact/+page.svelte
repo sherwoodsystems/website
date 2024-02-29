@@ -23,7 +23,7 @@
 				<input type="text" id="venue" name="venue" />
 			</label>
 
-			<div class="row">
+			<fieldset role="group">
 				<label for="event-start-date"
 					>Event Start Date
 					<input type="date" id="event-start-date" name="event-date" />
@@ -32,7 +32,7 @@
 					>Start Time
 					<input type="time" id="start-time" name="event-time" />
 				</label>
-			</div>
+			</fieldset>
 
 			<h3>Services Required</h3>
 			<label>
