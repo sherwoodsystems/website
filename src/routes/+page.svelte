@@ -8,8 +8,12 @@
 	// import Swiper styles
 	import 'swiper/css';
 
-	function navigate() {
+	function navigateToProd() {
 		goto('production/contact');
+	}
+
+	function navigateToInstallations() {
+		goto('installations/contact');
 	}
 
 	onMount(() => {
@@ -59,12 +63,12 @@
 			<h3>Event Production</h3>
 			<p>From corporate events to music festivals, we will make your live event a success.</p>
 
-			<button onclick={navigate}>Contact Production</button>
+			<button onclick={navigateToProd}>Contact Production</button>
 		</article>
 		<article>
 			<h3>Installations</h3>
 			<p>Looking for a new sound system, projector, lighting, or anything? Let us know!</p>
-			<button>Contact Installations</button>
+			<button onclick={navigateToProd}>Contact Installations</button>
 		</article>
 	</div>
 </div>

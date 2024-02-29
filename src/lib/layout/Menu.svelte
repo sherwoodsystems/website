@@ -9,7 +9,8 @@
 	<ul class="menu">
 		<li><a href="/production">Event Production</a></li>
 		<li><a href="/installations">Installations</a></li>
-		<li><a href="/contact">Contact Us</a></li>
+		<button id="quote-button">Get A Quote</button>
+		<!-- <li><a href="/contact">Contact Us</a></li> -->
 	</ul>
 </nav>
 
@@ -41,5 +42,11 @@
 	li a:hover {
 		text-decoration: none;
 		font-weight: bolder;
+	}
+
+	#quote-button {
+		background: #f2682a;
+		border: none;
+		cursor: pointer;
 	}
 </style>
