@@ -29,6 +29,7 @@
   "type": "module",
   "dependencies": {
     "@picocss/pico": "next",
+    "@vercel/analytics": "^1.2.2",
     "swiper": "^11.0.5"
   }
 }

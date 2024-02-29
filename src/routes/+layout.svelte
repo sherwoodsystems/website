@@ -1,4 +1,6 @@
 <script>
+	import { inject } from '@vercel/analytics';
+
 	import Footer from '$lib/layout/Footer.svelte';
 	import Hamburger from '$lib/buttons/Hamburger.svelte';
 	import '@picocss/pico/css/pico.min.css';
