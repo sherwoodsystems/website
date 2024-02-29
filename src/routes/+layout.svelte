@@ -1,5 +1,8 @@
 <script>
+	import { dev } from '$app/environment';
 	import { inject } from '@vercel/analytics';
+
+	inject({ mode: dev ? 'development' : 'production' });
 
 	import Footer from '$lib/layout/Footer.svelte';
 	import Hamburger from '$lib/buttons/Hamburger.svelte';
