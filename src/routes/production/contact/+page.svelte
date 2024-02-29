@@ -3,7 +3,6 @@
 		<form>
 			<h1>Request Event Production</h1>
 			<fieldset>
-				<legend>Contact Information</legend>
 				<label for="name"
 					>Name
 					<input type="text" id="name" name="name" />

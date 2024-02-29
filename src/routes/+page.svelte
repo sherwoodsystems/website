@@ -2,17 +2,16 @@
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 
-
 	import Swiper from 'swiper';
 	import { Navigation, Autoplay } from 'swiper/modules';
 
 	// import Swiper styles
 	import 'swiper/css';
 
-	function navigate(){
-		goto("production/contact");
+	function navigate() {
+		goto('production/contact');
 	}
-	
+
 	onMount(() => {
 		const swiper = new Swiper('.swiper', {
 			modules: [Navigation, Autoplay],
@@ -53,27 +52,26 @@
 </div>
 
 <div class="container">
-		<h1>Technical support for the event and entertainment industry</h1>
+	<h1>Technical support for the event and entertainment industry</h1>
 
-		<div class="grid">
-			<article>
-				<h3>Event Production</h3>
-				<p>From corporate events to music festivals, we will make your live event a success.</p>
+	<div class="grid">
+		<article>
+			<h3>Event Production</h3>
+			<p>From corporate events to music festivals, we will make your live event a success.</p>
 
-				<button onclick={navigate}>Contact Production</button>
-			</article>
-			<article>
-				<h3>Installations</h3>
-				<p>Looking for a new sound system, projector, lighting, or anything? Let us know!</p>
-				<button>Contact Installations</button>
-			</article>
-		</div>
+			<button onclick={navigate}>Contact Production</button>
+		</article>
+		<article>
+			<h3>Installations</h3>
+			<p>Looking for a new sound system, projector, lighting, or anything? Let us know!</p>
+			<button>Contact Installations</button>
+		</article>
+	</div>
 </div>
 
 <style>
 	.swiper {
 		width: 100%;
-		background: green;
 		height: 500px; /* Adjust height as needed */
 		overflow: hidden;
 		margin-bottom: 1rem;
@@ -92,20 +90,19 @@
 		object-fit: cover;
 	}
 
-	article{
+	article {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 
-	button{
+	button {
 		width: 300px;
-		background: #F2682A;
+		background: #f2682a;
 		border: none;
 	}
 
-	button:hover{
-		background: #C33D10;
+	button:hover {
+		background: #c33d10;
 	}
-	
 </style>
