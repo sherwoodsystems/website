@@ -1,4 +1,5 @@
 <div class="container">
+	<img class="hero" src="/UWConvocation.jpeg" alt="UW Convocation" />
 	<h1>Event Production</h1>
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum ligula erat, sed iaculis
@@ -16,3 +17,16 @@
 		massa in malesuada faucibus.
 	</p>
 </div>
+
+<style>
+	.hero {
+		object-fit: cover;
+		object-position: top;
+		width: 100%;
+		height: 400px;
+	}
+
+	h1 {
+		padding-top: 1rem;
+	}
+</style>

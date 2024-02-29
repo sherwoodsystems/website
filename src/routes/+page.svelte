@@ -72,7 +72,7 @@
 <style>
 	.swiper {
 		width: 100%;
-		height: 500px; /* Adjust height as needed */
+		height: 700px; /* Adjust height as needed */
 		overflow: hidden;
 		margin-bottom: 1rem;
 	}
