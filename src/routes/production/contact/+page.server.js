@@ -7,8 +7,8 @@ const mailerSend = new MailerSend({
 	apiKey: API_KEY // Make sure to set your API key in your environment variables
 });
 
-const sentFrom = new Sender('cameronslipp@sherwoodsystems.com', 'Cam Slipp');
-const recipients = [new Recipient('cameronslipp@sherwoodsystems.com', 'Cameron Slipp')];
+const sentFrom = new Sender('cameron@venuebase.app', 'Cam Slipp');
+const recipients = [new Recipient('cam@venuebase.ca', 'Cameron Slipp')];
 
 /** @type {import('./$types').Actions} */
 export const actions = {
