@@ -31,11 +31,17 @@
 			<fieldset role="group">
 				<label for="event-start-date"
 					>Event Start Date
-					<input type="date" id="event-start-date" name="event-date" />
+					<input
+						type="date"
+						id="event-start-date"
+						name="event-date"
+						required
+						aria-required="true"
+					/>
 				</label>
 				<label for="start-time"
 					>Start Time
-					<input type="time" id="start-time" name="event-time" />
+					<input type="time" id="start-time" name="event-time" required aria-required="true" />
 				</label>
 			</fieldset>
 
