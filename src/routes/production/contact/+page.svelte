@@ -4,79 +4,20 @@
 
 <div class="container">
 	<article>
-		<h1>Request Event Production</h1>
-
-		<form method="POST">
-			<fieldset>
-				<label for="name"
-					>Name
-					<input type="text" id="name" name="name" />
-				</label>
-				<label for="email"
-					>Email
-					<input type="email" id="email" name="email" />
-				</label>
-			</fieldset>
-
-			<h3>Event Information</h3>
-			<label for="event-name"
-				>Event Name
-				<input type="text" id="event-name" name="event-name" />
-			</label>
-			<label for="venue"
-				>Venue
-				<input type="text" id="venue" name="venue" />
-			</label>
-
-			<fieldset role="group">
-				<label for="event-start-date"
-					>Event Start Date
-					<input type="date" id="event-start-date" name="event-date" />
-				</label>
-				<label for="start-time"
-					>Start Time
-					<input type="time" id="start-time" name="event-time" />
-				</label>
-			</fieldset>
-
-			<h3>Services Required</h3>
-			<label>
-				<input name="lighting" type="checkbox" />
-				Lighting
-			</label>
-			<label>
-				<input name="sound" type="checkbox" />
-				Sound System
-			</label>
-			<label>
-				<input name="video" type="checkbox" />
-				Projection or Live Video
-			</label>
-			<label>
-				<input name="help" type="checkbox" />
-				I need help designing a plan for the event.
-			</label>
-
-			<label for="description"
-				><h3>Description of Event</h3>
-				<textarea id="description" name="event-description" class="description"></textarea>
-			</label>
-
-			<div class="agree-box">
-				<label>
-					<div id="finalAgree">
-						<span></span>
-						<input id="terms" type="checkbox" required aria-required="true" />
-						<div>
-							I recognize that Sherwood no longer offers equipment rentals. I am seeking event
-							production with delivery and setup.
-						</div>
-					</div>
-				</label>
-			</div>
-
-			<button type="submit">Submit Request</button>
-		</form>
+		<iframe
+			width="1000px"
+			height="1000px"
+			src="https://forms.office.com/Pages/ResponsePage.aspx?id=1hrLd-iLI0uIYc9rJNhg_UcPwrHrcBlAmxQaKYx0pVFUNTJDODhRQzgxTVJZRVVUWkRJVENTQklNVS4u&embed=true"
+			frameborder="0"
+			marginwidth="0"
+			marginheight="0"
+			style="border: none; max-width:100%; max-height:100vh"
+			allowfullscreen
+			webkitallowfullscreen
+			mozallowfullscreen
+			msallowfullscreen
+		>
+		</iframe>
 	</article>
 </div>
 
