@@ -19,6 +19,7 @@
 	.container {
 		display: flex;
 		padding: 1rem;
+		margin-top: 2rem;
 		flex-direction: row;
 		justify-content: space-evenly;
 	}
