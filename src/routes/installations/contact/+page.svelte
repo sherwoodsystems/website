@@ -35,10 +35,22 @@
         <!-- Update action URL -->
         <fieldset>
           <label for="name"
-            >Name<input type="text" id="name" name="name" /></label
+            >Name<input
+              type="text"
+              id="name"
+              name="name"
+              required
+              aria-required="true"
+            /></label
           >
           <label for="email"
-            >Email<input type="email" id="email" name="email" /></label
+            >Email<input
+              type="email"
+              id="email"
+              name="email"
+              required
+              aria-required="true"
+            /></label
           >
           <label for="subject"
             >Subject<input type="text" id="subject" name="subject" /></label
