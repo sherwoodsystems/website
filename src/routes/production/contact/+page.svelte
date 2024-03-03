@@ -37,11 +37,23 @@
         <fieldset>
           <label for="name"
             >Name
-            <input type="text" id="name" name="name" />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              aria-required="true"
+            />
           </label>
           <label for="email"
             >Email
-            <input type="email" id="email" name="email" />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              aria-required="true"
+            />
           </label>
         </fieldset>
 
@@ -121,6 +133,7 @@
             </div>
           </label>
         </div>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAAS8_r-Zqy8h2Exa"></div>
 
         <button type="submit">Submit Request</button>
       </form>
