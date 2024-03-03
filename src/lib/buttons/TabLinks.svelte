@@ -35,9 +35,6 @@
     border-color: blue;
   }
 
-  .tabs button:not(.selected):hover {
-    background-color: #e5e5e5;
-  }
   a {
     padding: 10px 20px;
     border: none;
@@ -47,6 +44,7 @@
     border-bottom: 3px solid transparent;
     text-decoration: none;
     color: inherit;
+    transition: transform 0.3s ease; /* Add transition for smooth effect */
   }
 
   a.selected {
@@ -54,6 +52,6 @@
   }
 
   a:not(.selected):hover {
-    background-color: #e5e5e5;
+    transform: translateY(-3px) translateX(2px);
   }
 </style>
