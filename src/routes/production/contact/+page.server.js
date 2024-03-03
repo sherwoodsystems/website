@@ -6,7 +6,6 @@ import {
   SMTP_USER,
   SMTP_PASS,
   EMAIL_FROM,
-  TURNSTILE_SECRET_KEY,
 } from "$env/static/private";
 
 // Hardcoded array of recipient email addresses
@@ -28,7 +27,15 @@ export const actions = {
     const formData = await request.formData();
     const formEntries = Object.fromEntries(formData);
     let email = formEntries.email;
-    const token = formData.get("cf-turnstile-response"); //
+
+    // Check if honeypot fields are filled in
+    if (
+      formEntries["honeypot-checkbox"] === "on" ||
+      formEntries["honeypot-text"]
+    ) {
+      console.error("Honeypot fields were filled in. Possible bot submission.");
+      throw redirect(303, "/error"); // Redirect to an error page
+    }
 
     // Mapping for more semantic field names
     const fieldNames = {
@@ -67,32 +74,6 @@ export const actions = {
     `;
 
     try {
-      //Cloudflare Verification
-      const formBody = new URLSearchParams();
-      formBody.append("secret", TURNSTILE_SECRET_KEY);
-      formBody.append("response", token);
-      // optionally add 'remoteip' and 'idempotency_key' if needed
-
-      const verifyResponse = await fetch(
-        "https://challenges.cloudflare.com/turnstile/v0/siteverify",
-        {
-          method: "POST",
-          body: formBody,
-        },
-      );
-
-      const verificationResult = await verifyResponse.json();
-
-      if (!verificationResult.success) {
-        // Handle the error, the challenge response is not valid
-        console.error(
-          "Turnstile verification failed:",
-          verificationResult["error-codes"],
-        );
-        // Redirect to an error page or respond with an error
-        return;
-      }
-
       // Send the email
       await transporter.sendMail({
         from: EMAIL_FROM,

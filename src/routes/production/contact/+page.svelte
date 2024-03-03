@@ -26,9 +26,11 @@
   <Toaster />
   <TabLinks activeTab="production" />
   {#if formSuccess}
-    <h1>Thanks!</h1>
-    <p>Your request has been received, we will be in touch shortly!</p>
-    <button on:click={submitAgain}>Submit another request</button>
+    <article>
+      <h1>Thanks!</h1>
+      <p>Your request has been received, we will be in touch shortly!</p>
+      <button on:click={submitAgain}>Submit another request</button>
+    </article>
   {:else}
     <article>
       <h1>Request Event Production</h1>
@@ -133,7 +135,21 @@
             </div>
           </label>
         </div>
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAAAS8_r-Zqy8h2Exa"></div>
+
+        <div style="display: none;">
+          <label for="honeypot-checkbox"
+            >Do not click me
+            <input
+              type="checkbox"
+              id="honeypot-checkbox"
+              name="honeypot-checkbox"
+            />
+          </label>
+          <label for="honeypot-text"
+            >What's your favorite color?
+            <input type="text" id="honeypot-text" name="honeypot-text" />
+          </label>
+        </div>
 
         <button type="submit">Submit Request</button>
       </form>

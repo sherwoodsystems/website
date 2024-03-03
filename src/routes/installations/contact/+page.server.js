@@ -28,6 +28,15 @@ export const actions = {
     const formEntries = Object.fromEntries(formData);
     let email = formEntries.email;
 
+    // Check if honeypot fields are filled in
+    if (
+      formEntries["honeypot-checkbox"] === "on" ||
+      formEntries["honeypot-text"]
+    ) {
+      console.error("Honeypot fields were filled in. Possible bot submission.");
+      throw redirect(303, "/error"); // Redirect to an error page
+    }
+
     // Prepare the email content with provided field names
     const emailContent = `
       <p><strong>Name:</strong> ${formEntries.name}</p>
