@@ -55,7 +55,7 @@
   }
 
   #quote-button:hover {
-    background: #f2682a;
+    background: #d3531a;
     cursor: pointer;
   }
 </style>

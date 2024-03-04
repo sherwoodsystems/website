@@ -216,7 +216,7 @@
   }
 
   /* Media queries for responsive design */
-  @media (max-width: 575px) {
+  @media (max-width: 750px) {
     article {
       max-width: 100%; /* Full width on extra small screens */
     }

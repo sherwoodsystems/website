@@ -1,3 +1,11 @@
+<script>
+  import { goto } from "$app/navigation";
+
+  function getQuote() {
+    goto("/installations/contact");
+  }
+</script>
+
 <div class="container">
   <img class="hero" src="/KnoxToronto.jpg" alt="UW Convocation" />
   <h1>Installations</h1>
@@ -14,6 +22,29 @@
     ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
     ex ea commodo consequat.
   </p>
+
+  <h2>Featured Projects</h2>
+  <a
+    class="clean"
+    href="https://www.christiedigital.com/press-releases/THEMUSEUM-dives-into-new-permanent-immersive-experience/"
+    target="_blank"
+  >
+    <article class="featured">
+      <img
+        class="article-img"
+        src="/installations/themuseum.webp"
+        alt="Multiple Christie Digital projectors mounted to a ceiling"
+      />
+      <div class="card-content">
+        <h3>EYEPOOL: Immersive Gallery Experience</h3>
+        <p>
+          Read about how Sherwood Systems installed 14 Christie DWU960ST-iS
+          Inspire Series laser projectors at THEMUSEUM to create an innovative
+          permanent digital immersive experience.
+        </p>
+      </div>
+    </article>
+  </a>
 
   <h2>Client Testimonials</h2>
   <article>
@@ -35,25 +66,12 @@
     </blockquote>
     <p>- Dolor Sit Amet</p>
   </article>
-
-  <h2>Featured Projects</h2>
-  <article class="featured">
-    <img
-      class="article-img"
-      src="/installations/themuseum.webp"
-      alt="Multiple Christie Digital projectors mounted to a ceiling"
-    />
-    <div class="card-content">
-      <h3>EYEPOOL: Immersive Gallery Experience</h3>
-      <p>
-        Read about how Sherwood Systems installed 14 Christie DWU960ST-iS
-        Inspire Series laser projectors at THEMUSEUM to create an innovative
-        permanent digital immersive experience.
-      </p>
-    </div>
-  </article>
-
-  <button>Get a quote</button>
+  <div
+    id="button-feature"
+    style="display:flex;flex-direction: column;align-items: center;"
+  >
+    <button on:click={getQuote}>Get a Quote</button>
+  </div>
 </div>
 
 <style>
@@ -69,34 +87,25 @@
     padding-top: 1rem;
   }
 
-  .card {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    padding: 1rem;
-    margin-top: 2rem;
-  }
-
-  .card-content {
-    padding-left: 1rem;
-  }
-
-  .card img {
-    max-width: 100px; /* Adjust according to image and design preference */
-  }
-
-  .button {
-    background-color: #007bff;
+  button {
+    background-color: #f2682a;
+    min-width: 300px;
     color: white;
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 1rem;
     display: inline-block;
+    border: none;
   }
 
-  .button:hover {
-    background-color: #0056b3;
+  button:hover {
+    background-color: #d3531a;
+  }
+
+  .clean {
+    text-decoration: none;
+    color: inherit;
   }
 
   blockquote {
@@ -109,11 +118,17 @@
 
   article p {
     display: inline;
+    color: inherit;
   }
 
   .featured {
     display: flex;
     flex-direction: row;
+    transition: transform 0.3s ease;
+  }
+
+  .featured:hover {
+    transform: translate(2px, -3px);
   }
 
   .article-img {
