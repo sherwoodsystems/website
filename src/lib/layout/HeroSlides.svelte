@@ -14,7 +14,7 @@
 			direction: 'horizontal',
 			loop: true,
 			autoplay: {
-				delay: 3500,
+				delay: 4500,
 				disableOnInteraction: false
 			},
 			// Navigation arrows
