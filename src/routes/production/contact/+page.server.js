@@ -1,5 +1,8 @@
 import { redirect } from "@sveltejs/kit";
 import nodemailer from "nodemailer";
+
+import { estimatePrepDate } from "$lib/scripts/dates.js";
+
 import {
   SMTP_HOST,
   SMTP_PORT,
@@ -27,6 +30,12 @@ export const actions = {
     const formData = await request.formData();
     const formEntries = Object.fromEntries(formData);
     let email = formEntries.email;
+    let startDate = formEntries.eventDate;
+    const prepDate = estimatePrepDate(startDate);
+    console.log(
+      "Prep Date (excluding weekends and holidays):",
+      prepDate.toISOString().split("T")[0],
+    );
 
     // Check if honeypot fields are filled in
     if (
@@ -36,18 +45,6 @@ export const actions = {
       console.error("Honeypot fields were filled in. Possible bot submission.");
       throw redirect(303, "/error"); // Redirect to an error page
     }
-
-    // Mapping for more semantic field names
-    const fieldNames = {
-      name: "Name",
-      email: "Email",
-      "event-name": "Event Name",
-      venue: "Venue",
-      "event-date": "Event Start Date",
-      "event-time": "Start Time",
-      "event-description": "Description of Event",
-      terms: "Terms Agreed",
-    };
 
     // Service fields
     const serviceFields = ["staging", "lighting", "sound", "video", "help"];
@@ -63,13 +60,16 @@ export const actions = {
 
     // Construct the email content with more semantic field names
     const emailContent = `
-      ${Object.entries(otherEntries)
-        .filter(([key]) => !serviceFields.includes(key)) // Exclude service fields for separate handling
-        .map(
-          ([key, value]) =>
-            `<p><strong>${fieldNames[key] || key}:</strong> ${value}</p>`,
-        )
-        .join("")}
+      <p><strong>Name:</strong> ${formEntries.name}</p>
+      <p><strong>Email:</strong> ${formEntries.email}</p>
+      <p><strong>Event Name:</strong> ${formEntries["event-name"]}</p>
+      <p><strong>Venue:</strong> ${formEntries.venue}</p>
+      <p><strong>Prep Date (excluding weekends and holidays):</strong> ${prepDate.toISOString().split("T")[0]}</p>
+      <p><strong>Event Start Date:</strong> ${formEntries["event-date"]}</p>
+      <p><strong>Start Time:</strong> ${formEntries["event-time"]}</p>
+      <p><strong>Description of Event:</strong> ${formEntries["event-description"]}</p>
+      <p><strong>Services Required:</strong> ${formEntries.services}</p>
+      <p><strong>Terms Agreed:</strong> ${formEntries.terms ? "Yes" : "No"}</p>
       <p><strong>Services Required:</strong> ${servicesRequired}</p>
     `;
 

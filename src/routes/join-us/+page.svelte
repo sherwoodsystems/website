@@ -2,8 +2,6 @@
   import toast, { Toaster } from "svelte-french-toast";
   import { enhance } from "$app/forms";
 
-  import TabLinks from "$lib/buttons/TabLinks.svelte";
-
   let { form } = $props();
   let formSuccess = $state(false);
 
@@ -23,119 +21,52 @@
 </script>
 
 <div class="container">
-  <Toaster />
-  <TabLinks activeTab="production" />
   {#if formSuccess}
     <article>
       <h1>Thanks!</h1>
-      <p>Your request has been received, we will be in touch shortly!</p>
+      <p>Your request has been received; we will be in touch shortly!</p>
       <button on:click={submitAgain}>Submit another request</button>
     </article>
   {:else}
     <article>
-      <h1>Request Event Production</h1>
-
-      <form method="POST" use:enhance>
+      <h1>Send us your resume</h1>
+      <form method="POST" enctype="multipart/form-data" use:enhance>
+        <!-- Update action URL -->
         <fieldset>
           <label for="name"
-            >Name
-            <input
+            >Name<input
               type="text"
               id="name"
               name="name"
               required
               aria-required="true"
-            />
-          </label>
+            /></label
+          >
           <label for="email"
-            >Email
-            <input
+            >Email<input
               type="email"
               id="email"
               name="email"
               required
               aria-required="true"
-            />
-          </label>
+            /></label
+          >
+          <label for="subject"
+            >Subject<input type="text" id="subject" name="subject" /></label
+          >
         </fieldset>
-
-        <h3>Event Information</h3>
-        <label for="eventName"
-          >Event Name
-          <input type="text" id="eventName" name="eventName" />
-        </label>
-        <label for="venue"
-          >Venue
-          <input type="text" id="venue" name="venue" />
-        </label>
-
-        <fieldset role="group">
-          <label for="eventDate"
-            >Event Start Date
-            <input
-              type="date"
-              id="eventDate"
-              name="eventDate"
-              required
-              aria-required="true"
-            />
-          </label>
-          <label for="start-time"
-            >Start Time
-            <input
-              type="time"
-              id="start-time"
-              name="event-time"
-              required
-              aria-required="true"
-            />
-          </label>
-        </fieldset>
-
-        <h3>What services do you require?</h3>
-        <label>
-          <input name="staging" type="checkbox" />
-          Stage and Drape
-        </label>
-        <label>
-          <input name="lighting" type="checkbox" />
-          Lighting
-        </label>
-        <label>
-          <input name="sound" type="checkbox" />
-          Audio
-        </label>
-        <label>
-          <input name="video" type="checkbox" />
-          Projection and/or Live Video
-        </label>
-        <label>
-          <input name="help" type="checkbox" />
-          I'm not sure
-        </label>
 
         <label for="description"
-          ><h3>Description of Event</h3>
-          <textarea
+          >Message<textarea
             id="description"
             name="event-description"
             class="description"
-          ></textarea>
+          ></textarea></label
+        >
+        <label for="file">
+          Upload your resume (max 2MB)
+          <input type="file" id="file" name="file" accept=".pdf" required />
         </label>
-
-        <div class="agree-box">
-          <label>
-            <div id="finalAgree">
-              <span></span>
-              <input id="terms" type="checkbox" required aria-required="true" />
-              <div>
-                I recognize that Sherwood no longer offers equipment rentals. I
-                am seeking event production with delivery and setup.
-              </div>
-            </div>
-          </label>
-        </div>
-
         <div style="display: none;">
           <label for="honeypot-checkbox"
             >Do not click me
@@ -151,10 +82,11 @@
           </label>
         </div>
 
-        <button type="submit">Submit Request</button>
+        <input type="submit" value="Submit Request" />
       </form>
     </article>
   {/if}
+  <Toaster />
 </div>
 
 <style>
@@ -208,15 +140,8 @@
     margin-top: 1rem; /* Provide some spacing above the submit button */
   }
 
-  #finalAgree {
-    display: grid;
-    grid-template-columns: 0.4fr 0.7fr 14fr;
-    gap: 0.5rem;
-    align-items: center;
-  }
-
   /* Media queries for responsive design */
-  @media (max-width: 750px) {
+  @media (max-width: 575px) {
     article {
       max-width: 100%; /* Full width on extra small screens */
     }
