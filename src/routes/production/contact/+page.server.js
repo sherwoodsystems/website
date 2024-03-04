@@ -6,8 +6,7 @@ import { estimatePrepDate } from '$lib/scripts/dates.js';
 import { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, EMAIL_FROM } from '$env/static/private';
 
 // Hardcoded array of recipient email addresses
-const emailRecipients = ['cameronslipp@sherwoodsystems.com', 'cdslipp@hey.com'];
-
+const emailRecipients = ['cameronslipp@sherwoodsystems.com', 'owen@sherwoodsystems.com'];
 // Set up your SMTP transporter
 const transporter = nodemailer.createTransport({
 	host: SMTP_HOST,
