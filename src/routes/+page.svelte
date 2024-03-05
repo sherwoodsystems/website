@@ -9,6 +9,14 @@
 	// import Swiper styles
 	import 'swiper/css';
 
+	let photos = [
+		{ largeURL: 'hero/1.jpg', thumbnailURL: '', width: 0, height: 0 }, // Add the correct thumbnail URL and dimensions if necessary
+		{ largeURL: 'hero/2.jpg', thumbnailURL: '', width: 0, height: 0 },
+		{ largeURL: 'hero/3.jpg', thumbnailURL: '', width: 0, height: 0 },
+		{ largeURL: 'hero/4.jpg', thumbnailURL: '', width: 0, height: 0 },
+		{ largeURL: 'hero/5.jpg', thumbnailURL: '', width: 0, height: 0 }
+	];
+
 	function navigateToProd() {
 		goto('production/contact');
 	}
@@ -18,7 +26,7 @@
 	}
 </script>
 
-<HeroSlides />
+<HeroSlides {photos} />
 <div class="container">
 	<h1>Technical support for the event and entertainment industry</h1>
 
@@ -31,7 +39,10 @@
 		</article>
 		<article>
 			<h3>Installations</h3>
-			<p>Looking for a new sound system, projector, lighting, or anything? Let us know!</p>
+			<p>
+				Sherwood can provide the installation of fully integrated multimedia systems that can be
+				operated by anyone
+			</p>
 			<button onclick={navigateToInstallations}>Contact Installations</button>
 		</article>
 	</div>

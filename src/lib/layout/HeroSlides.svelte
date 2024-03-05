@@ -7,6 +7,9 @@
 	// import Swiper styles
 	import 'swiper/css';
 
+	// Declare the photos prop
+	export let photos = [];
+
 	onMount(() => {
 		const swiper = new Swiper('.swiper', {
 			modules: [Navigation, Autoplay],
@@ -28,23 +31,15 @@
 
 <!-- Slider main container -->
 <div class="swiper">
-	<!-- Additional required wrapper -->
 	<div class="swiper-wrapper">
-		<!-- Slides -->
-		<div class="swiper-slide">
-			<img src="hero/1.jpg" alt="Slide 1" />
-		</div>
-		<div class="swiper-slide">
-			<img src="hero/2.jpg" alt="Slide 2" />
-		</div>
-		<div class="swiper-slide">
-			<img src="hero/3.jpg" alt="Slide 3" />
-		</div>
-		<div class="swiper-slide">
-			<img src="hero/4.jpg" alt="Slide 3" />
-		</div>
+		<!-- Use #each to loop through photos -->
+		{#each photos as photo (photo.largeURL)}
+			<div class="swiper-slide">
+				<img src={photo.largeURL} alt="Slideshow photo" />
+			</div>
+		{/each}
 	</div>
-	<!-- If we need navigation buttons -->
+
 	<div class="swiper-button-prev">prev</div>
 	<div class="swiper-button-next">next</div>
 </div>

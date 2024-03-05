@@ -15,7 +15,7 @@
 		<li><a href="/join-us">Join the team</a></li>
 		<li>
 			<a href="https://sherwoodmusic.com" target="_blank" rel="noopener noreferrer">
-				For musical instruments, visit Sherwood Music.
+				Sherwood Music
 			</a>
 		</li>
 	</ul>

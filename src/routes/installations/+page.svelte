@@ -1,13 +1,22 @@
 <script>
 	import { goto } from '$app/navigation';
+	import HeroSlides from '$lib/layout/HeroSlides.svelte';
+
+	let photos = [
+		{ largeURL: '/hero/5.jpg', thumbnailURL: '', width: 0, height: 0 }, // Add the correct thumbnail URL and dimensions if necessary
+		{ largeURL: '/hero/4.jpg', thumbnailURL: '', width: 0, height: 0 },
+		{ largeURL: '/hero/3.jpg', thumbnailURL: '', width: 0, height: 0 },
+		{ largeURL: '/hero/2.jpg', thumbnailURL: '', width: 0, height: 0 },
+		{ largeURL: '/hero/1.jpg', thumbnailURL: '', width: 0, height: 0 }
+	];
 
 	function getQuote() {
 		goto('/installations/contact');
 	}
 </script>
 
+<HeroSlides {photos} />
 <div class="container">
-	<img class="hero" src="/KnoxToronto.jpg" alt="UW Convocation" />
 	<h1>Installations</h1>
 	<p>
 		Organizations and institutions of all types rely on Sherwood for the installation of fully
@@ -31,26 +40,49 @@
 	</p> -->
 
 	<h2>Featured Projects</h2>
-	<a
-		class="clean"
-		href="https://www.christiedigital.com/press-releases/THEMUSEUM-dives-into-new-permanent-immersive-experience/"
-		target="_blank"
-	>
-		<article class="featured">
-			<img
-				class="article-img"
-				src="/installations/themuseum.webp"
-				alt="Multiple Christie Digital projectors mounted to a ceiling"
-			/>
-			<div class="card-content">
-				<h3>EYEPOOL: Immersive Gallery Experience</h3>
-				<p>
-					Read about how Sherwood Systems installed 14 Christie DWU960ST-iS Inspire Series laser
-					projectors at THEMUSEUM to create an innovative permanent digital immersive experience.
-				</p>
-			</div>
-		</article>
-	</a>
+	<div id="featured-articles">
+		<a
+			class="clean"
+			href="https://www.christiedigital.com/press-releases/THEMUSEUM-dives-into-new-permanent-immersive-experience/"
+			target="_blank"
+		>
+			<article class="featured">
+				<img
+					class="article-img"
+					src="/installations/themuseum.webp"
+					alt="Multiple Christie Digital projectors mounted to a ceiling"
+				/>
+				<div class="card-content">
+					<h3>EYEPOOL: Immersive Gallery Experience</h3>
+					<p>
+						Read about how Sherwood Systems installed 14 Christie DWU960ST-iS Inspire Series laser
+						projectors at THEMUSEUM to create an innovative permanent digital immersive experience.
+					</p>
+				</div>
+			</article>
+		</a>
+
+		<a
+			class="clean"
+			href="https://www.livedesignonline.com/news/danley-sound-labs-moves-knox-presbyterian-church-to-fantastic-intelligibility-and-musicality"
+			target="_blank"
+		>
+			<article class="featured">
+				<img
+					class="article-img"
+					src="/installations/KnoxToronto.jpg"
+					alt="A Danley Sound Labs speaker mounted to a wall in a church sanctuary"
+				/>
+				<div class="card-content">
+					<h3>Danley Sound Labs Installation at Knox Presbyterian</h3>
+					<p>
+						Knox Presbyterian Church in Toronto has greatly improved its audio clarity with a custom
+						Danley sound reinforcement system installed by Sherwood.
+					</p>
+				</div>
+			</article>
+		</a>
+	</div>
 
 	<h2>Client Testimonials</h2>
 	<article>
@@ -86,9 +118,9 @@
 <style>
 	.hero {
 		object-fit: cover;
-		object-position: bottom;
+		object-position: top;
 		width: 100%;
-		height: 300px; /* Adjust according to design preference */
+		height: 800px; /* Adjust according to design preference */
 	}
 
 	h1,
@@ -130,10 +162,20 @@
 		color: inherit;
 	}
 
-	.featured {
+	#featured-articles {
 		display: flex;
 		flex-direction: row;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.featured {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		transition: transform 0.3s ease;
+		width: 600px;
+		height: 700px;
 	}
 
 	.featured:hover {
@@ -143,7 +185,7 @@
 	.article-img {
 		object-fit: cover;
 		flex: 0 0 auto;
-		width: 150px;
-		margin-right: 1rem;
+		height: 400px;
+		margin: 1rem;
 	}
 </style>
