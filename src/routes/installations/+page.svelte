@@ -164,9 +164,11 @@
 
 	#featured-articles {
 		display: flex;
+		padding: 0.5rem;
 		flex-direction: row;
 		align-items: center;
 		gap: 1rem;
+		overflow-x: scroll;
 	}
 
 	.featured {
@@ -187,5 +189,25 @@
 		flex: 0 0 auto;
 		height: 400px;
 		margin: 1rem;
+	}
+
+	@media (max-width: 768px) {
+		#featured-articles {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 1rem;
+			overflow-x: scroll;
+		}
+
+		.featured {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			transition: transform 0.3s ease;
+			width: 80%;
+			margin: 1rem;
+			height: auto;
+		}
 	}
 </style>

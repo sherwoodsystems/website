@@ -11,14 +11,11 @@
 			<i class="fa-brands fa-facebook"></i>
 		</a>
 	</div>
-	<ul class="footer-links">
-		<li><a href="/join-us">Join the team</a></li>
-		<li>
-			<a href="https://sherwoodmusic.com" target="_blank" rel="noopener noreferrer">
-				Sherwood Music
-			</a>
-		</li>
-	</ul>
+	<div class="footer-links">
+		<a href="https://sherwoodmusic.com" target="_blank" rel="noopener noreferrer">
+			For musical instrument sales visit Sherwood Music
+		</a>
+	</div>
 	<p>© 2024 Sherwood Audio, Inc.</p>
 </div>
 
@@ -27,6 +24,9 @@
 		color: white;
 	}
 	li {
+		color: white;
+	}
+	a {
 		color: white;
 	}
 	.footer-links {
@@ -41,14 +41,13 @@
 		align-items: center;
 		justify-content: space-evenly;
 	}
-	ul {
+	.footer-links {
 		display: flex;
-		flex-direction: row;
-		gap: 3rem;
-		justify-content: center;
-	}
-	li {
-		list-style: none;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		margin-bottom: 2rem;
+		color: white;
 	}
 	.social-links {
 		display: flex;
