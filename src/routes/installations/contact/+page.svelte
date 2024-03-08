@@ -1,5 +1,4 @@
 <script>
-  import toast, { Toaster } from "svelte-french-toast";
   import { enhance } from "$app/forms";
 
   import TabLinks from "$lib/buttons/TabLinks.svelte";
@@ -16,7 +15,6 @@
       if (form.success) {
         console.log("Form received");
         formSuccess = true;
-        toast.success("Form submitted successfully");
       }
     }
   });
@@ -85,7 +83,6 @@
       </form>
     </article>
   {/if}
-  <Toaster />
 </div>
 
 <style>

@@ -1,5 +1,4 @@
 <script>
-  import toast, { Toaster } from "svelte-french-toast";
   import { enhance } from "$app/forms";
 
   let { form } = $props();
@@ -14,7 +13,6 @@
       if (form.success) {
         console.log("Form received");
         formSuccess = true;
-        toast.success("Form submitted successfully");
       }
     }
   });
@@ -86,7 +84,6 @@
       </form>
     </article>
   {/if}
-  <Toaster />
 </div>
 
 <style>
