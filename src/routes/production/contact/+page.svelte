@@ -1,6 +1,4 @@
 <script>
-  import { enhance } from "$app/forms";
-
   import TabLinks from "$lib/buttons/TabLinks.svelte";
 
   let { form } = $props();
@@ -30,113 +28,20 @@
     </article>
   {:else}
     <article>
-      <h1>Request Event Production</h1>
-
-      <form method="POST" use:enhance>
-        <fieldset>
-          <label for="name"
-            >Name
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              aria-required="true"
-            />
-          </label>
-          <label for="email"
-            >Email
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              aria-required="true"
-            />
-          </label>
-        </fieldset>
-
-        <h3>Event Information</h3>
-        <label for="eventName"
-          >Event Name
-          <input type="text" id="eventName" name="eventName" />
-        </label>
-        <label for="venue"
-          >Venue
-          <input type="text" id="venue" name="venue" />
-        </label>
-
-        <fieldset role="group">
-          <label for="eventDate"
-            >Event Start Date
-            <input
-              type="date"
-              id="eventDate"
-              name="eventDate"
-              required
-              aria-required="true"
-            />
-          </label>
-          <label for="start-time"
-            >Start Time
-            <input
-              type="time"
-              id="start-time"
-              name="event-time"
-              required
-              aria-required="true"
-            />
-          </label>
-        </fieldset>
-
-        <h3>What services do you require?</h3>
-        <label>
-          <input name="staging" type="checkbox" />
-          Stage and Drape
-        </label>
-        <label>
-          <input name="lighting" type="checkbox" />
-          Lighting
-        </label>
-        <label>
-          <input name="sound" type="checkbox" />
-          Audio
-        </label>
-        <label>
-          <input name="video" type="checkbox" />
-          Projection and/or Live Video
-        </label>
-        <label>
-          <input name="help" type="checkbox" />
-          I'm not sure
-        </label>
-
-        <label for="description"
-          ><h3>Description of Event</h3>
-          <textarea
-            id="description"
-            name="event-description"
-            class="description"
-          ></textarea>
-        </label>
-
-        <div style="display: none;">
-          <label for="honeypot-checkbox"
-            >Do not click me
-            <input
-              type="checkbox"
-              id="honeypot-checkbox"
-              name="honeypot-checkbox"
-            />
-          </label>
-          <label for="honeypot-text"
-            >What's your favorite color?
-            <input type="text" id="honeypot-text" name="honeypot-text" />
-          </label>
-        </div>
-
-        <button type="submit">Submit Request</button>
-      </form>
+      <iframe
+        width="1000px"
+        height="1000px"
+        src="https://forms.office.com/Pages/ResponsePage.aspx?id=1hrLd-iLI0uIYc9rJNhg_UcPwrHrcBlAmxQaKYx0pVFUQU9TMzdLTzE5NjMxUExHTUlEWldVNE9QWi4u&embed=true"
+        frameborder="0"
+        marginwidth="0"
+        marginheight="0"
+        style="border: none; max-width:100%; max-height:100vh"
+        allowfullscreen
+        webkitallowfullscreen
+        mozallowfullscreen
+        msallowfullscreen
+      >
+      </iframe>
     </article>
   {/if}
 </div>
@@ -175,6 +80,21 @@
     min-height: 200px;
     resize: vertical;
     width: 100%; /* Make textarea full width of its parent */
+  }
+
+  .agree-box label {
+    display: flex;
+    flex-direction: row; /* Ensure checkbox and text are in one line */
+    gap: 0.5rem;
+    flex-wrap: wrap; /* Allow for wrapping text */
+  }
+
+  .agree-box label input[type="checkbox"] {
+    min-width: 1rem; /* Give checkbox a min-width */
+  }
+
+  .agree-box label span {
+    flex: 1; /* Text takes the remaining space */
   }
 
   button[type="submit"] {

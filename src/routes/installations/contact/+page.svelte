@@ -1,6 +1,4 @@
 <script>
-  import { enhance } from "$app/forms";
-
   import TabLinks from "$lib/buttons/TabLinks.svelte";
 
   let { form } = $props();
@@ -25,62 +23,25 @@
   {#if formSuccess}
     <article>
       <h1>Thanks!</h1>
-      <p>Your request has been received; we will be in touch shortly!</p>
+      <p>Your request has been received, we will be in touch shortly!</p>
       <button on:click={submitAgain}>Submit another request</button>
     </article>
   {:else}
     <article>
-      <h1>Request an Installation</h1>
-      <form method="POST" use:enhance>
-        <!-- Update action URL -->
-        <fieldset>
-          <label for="name"
-            >Name<input
-              type="text"
-              id="name"
-              name="name"
-              required
-              aria-required="true"
-            /></label
-          >
-          <label for="email"
-            >Email<input
-              type="email"
-              id="email"
-              name="email"
-              required
-              aria-required="true"
-            /></label
-          >
-          <label for="subject"
-            >Subject<input type="text" id="subject" name="subject" /></label
-          >
-        </fieldset>
-
-        <label for="description"
-          >Message<textarea
-            id="description"
-            name="event-description"
-            class="description"
-          ></textarea></label
-        >
-        <div style="display: none;">
-          <label for="honeypot-checkbox"
-            >Do not click me
-            <input
-              type="checkbox"
-              id="honeypot-checkbox"
-              name="honeypot-checkbox"
-            />
-          </label>
-          <label for="honeypot-text"
-            >What's your favorite color?
-            <input type="text" id="honeypot-text" name="honeypot-text" />
-          </label>
-        </div>
-
-        <input type="submit" value="Submit Request" />
-      </form>
+      <iframe
+        width="1000px"
+        height="1000px"
+        src="https://forms.office.com/Pages/ResponsePage.aspx?id=1hrLd-iLI0uIYc9rJNhg_UcPwrHrcBlAmxQaKYx0pVFURFlMQ09CSE4zQ0xEV0dITUpPTksyWVRQQy4u&embed=true"
+        frameborder="0"
+        marginwidth="0"
+        marginheight="0"
+        style="border: none; max-width:100%; max-height:100vh"
+        allowfullscreen
+        webkitallowfullscreen
+        mozallowfullscreen
+        msallowfullscreen
+      >
+      </iframe>
     </article>
   {/if}
 </div>
@@ -97,6 +58,10 @@
   article {
     max-width: 50dvw;
     width: 100%; /* Ensure full width within the constraints of max-width */
+  }
+
+  h3 {
+    padding-top: 0.5rem;
   }
 
   .row,
@@ -144,7 +109,7 @@
   }
 
   /* Media queries for responsive design */
-  @media (max-width: 575px) {
+  @media (max-width: 750px) {
     article {
       max-width: 100%; /* Full width on extra small screens */
     }
