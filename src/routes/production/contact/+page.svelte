@@ -120,19 +120,6 @@
           ></textarea>
         </label>
 
-        <div class="agree-box">
-          <label>
-            <div id="finalAgree">
-              <span></span>
-              <input id="terms" type="checkbox" required aria-required="true" />
-              <div>
-                I recognize that Sherwood no longer offers equipment rentals. I
-                am seeking event production with delivery and setup.
-              </div>
-            </div>
-          </label>
-        </div>
-
         <div style="display: none;">
           <label for="honeypot-checkbox"
             >Do not click me
@@ -188,21 +175,6 @@
     min-height: 200px;
     resize: vertical;
     width: 100%; /* Make textarea full width of its parent */
-  }
-
-  .agree-box label {
-    display: flex;
-    flex-direction: row; /* Ensure checkbox and text are in one line */
-    gap: 0.5rem;
-    flex-wrap: wrap; /* Allow for wrapping text */
-  }
-
-  .agree-box label input[type="checkbox"] {
-    min-width: 1rem; /* Give checkbox a min-width */
-  }
-
-  .agree-box label span {
-    flex: 1; /* Text takes the remaining space */
   }
 
   button[type="submit"] {
