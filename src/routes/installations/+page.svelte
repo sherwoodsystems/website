@@ -75,7 +75,7 @@
       <article class="featured">
         <img
           class="article-img"
-          src="/installations/articles/themuseum.webp"
+          src="/installations/articles/themuseum.jpeg"
           alt="Multiple Christie Digital projectors mounted to a ceiling"
         />
         <div class="card-content">
