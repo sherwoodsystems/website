@@ -56,8 +56,8 @@
   }
 
   article {
-    max-width: 50dvw;
-    width: 100%; /* Ensure full width within the constraints of max-width */
+    width: 100%;
+    max-width: 1000px;
   }
 
   h3 {
