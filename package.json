@@ -29,6 +29,7 @@
   "type": "module",
   "dependencies": {
     "@picocss/pico": "next",
+    "@sveltejs/adapter-vercel": "^5.5.2",
     "@vercel/analytics": "^1.4.1",
     "@vercel/postgres": "^0.7.2",
     "googleapis": "^133.0.0",
