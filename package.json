@@ -15,27 +15,27 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "@playwright/test": "^1.28.1",
-    "@sveltejs/adapter-auto": "^2.0.0",
-    "@sveltejs/kit": "^1.27.4",
-    "prettier": "^3.1.1",
-    "prettier-plugin-svelte": "^3.1.2",
-    "svelte": "^5.0.0-next.1",
-    "svelte-check": "^3.6.0",
-    "typescript": "^5.0.0",
-    "vite": "^4.4.2",
-    "vitest": "^0.32.2"
+    "@playwright/test": "^1.49.1",
+    "@sveltejs/adapter-auto": "^2.1.1",
+    "@sveltejs/kit": "^1.30.4",
+    "prettier": "^3.4.2",
+    "prettier-plugin-svelte": "^3.3.2",
+    "svelte": "^5.16.5",
+    "svelte-check": "^3.8.6",
+    "typescript": "^5.7.2",
+    "vite": "^4.5.5",
+    "vitest": "^0.32.4"
   },
   "type": "module",
   "dependencies": {
     "@picocss/pico": "next",
-    "@vercel/analytics": "^1.2.2",
+    "@vercel/analytics": "^1.4.1",
     "@vercel/postgres": "^0.7.2",
     "googleapis": "^133.0.0",
-    "mailersend": "^2.2.0",
-    "nodemailer": "^6.9.11",
-    "photoswipe": "^5.4.3",
+    "mailersend": "^2.3.0",
+    "nodemailer": "^6.9.16",
+    "photoswipe": "^5.4.4",
     "svelte-icons": "^2.1.0",
-    "swiper": "^11.0.5"
+    "swiper": "^11.2.0"
   }
 }
