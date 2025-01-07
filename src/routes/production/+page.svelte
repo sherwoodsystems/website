@@ -1,16 +1,40 @@
 <script>
   import { goto } from "$app/navigation";
+  import { register } from 'swiper/element/bundle';
+  import { onMount } from 'svelte';
+  
+  // Register Swiper web components
+  register();
 
   function getQuote() {
     goto("/production/contact");
   }
+
+  onMount(() => {
+    // Initialize Swiper elements with configuration
+    const swiperEls = document.querySelectorAll('swiper-container');
+    swiperEls.forEach(swiperEl => {
+      Object.assign(swiperEl, {
+        slidesPerView: 2,
+        breakpoints: {
+          // when window width is >= 768px
+          768: {
+            slidesPerView: 3,
+            enabled: false, // Disable swiper on desktop
+          }
+        },
+        injectStylesUrls: ['node_modules/swiper/swiper-bundle.min.css']
+      });
+      swiperEl.initialize();
+    });
+  });
 </script>
 
 <div class="container">
   <img class="hero" src="/UWConvocation.jpeg" alt="UW Convocation" />
   <h1>Event Production</h1>
   <p>
-    At Sherwood, we provide a comprehensive event production solution.
+    At Sherwood, we provide comprehensive event production solutions.
     Specializing in audio, lighting, video, staging, and rigging, our team
     ensures that we bring your vision to life seamlessly.
   </p>
@@ -23,11 +47,20 @@
     grandeur of large-scale industry symposiums, we have the resources to suit
     the unique essence of each event.
   </p>
-  <div id="imageBanner">
-    <img src="/production/corporate/1.jpg" class="smallImg" />
-    <img src="/production/corporate/2.jpg" />
-    <img src="/production/corporate/3.jpg" />
-  </div>
+  
+  <swiper-container init="false">
+    <swiper-slide>
+      <img src="/production/corporate/1.jpg" class="smallImg" />
+    </swiper-slide>
+    <swiper-slide>
+      <img src="/production/corporate/2.jpg" class="smallImg" />
+    </swiper-slide>
+    <swiper-slide>
+      <img src="/production/corporate/3.jpg" class="smallImg" />
+    </swiper-slide>
+    <div class="swiper-pagination" style="padding-top: 1rem;"></div>
+  </swiper-container>
+  
 
   <h4>Virtual Events</h4>
   <p>
@@ -49,16 +82,23 @@
     theatrical productions that transport audiences to other worlds, we are
     dedicated to bringing visions to life on stage.
   </p>
-  <div id="liveImageBanner">
-    <img src="/production/live/1.jpg" class="smallLiveImg" />
-    <img src="/production/live/2.jpg" class="smallLiveImg" />
-    <img src="/production/live/3.jpg" class="smallLiveImg" />
-    <img src="/production/live/4.jpg" class="smallLiveImg" />
-  </div>
-  <div
-    id="button-feature"
-    style="display:flex;flex-direction: column;align-items: center;"
-  >
+  
+  <swiper-container init="false">
+    <swiper-slide>
+      <img src="/production/live/1.jpg" class="smallLiveImg" />
+    </swiper-slide>
+    <swiper-slide>
+      <img src="/production/live/2.jpg" class="smallLiveImg" />
+    </swiper-slide>
+    <swiper-slide>
+      <img src="/production/live/3.jpg" class="smallLiveImg" />
+    </swiper-slide>
+    <swiper-slide>
+      <img src="/production/live/4.jpg" class="smallLiveImg" />
+    </swiper-slide>
+  </swiper-container>
+
+  <div id="button-feature" style="display:flex;flex-direction: column;align-items: center;">
     <button on:click={getQuote}>Get a Quote</button>
   </div>
 </div>
@@ -132,7 +172,9 @@
     justify-content: space-between;
     margin-top: 1rem;
     width: 100%;
-    height: 250px;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   #liveImageBanner {
@@ -141,17 +183,27 @@
     justify-content: space-between;
     margin-top: 1rem;
     width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .smallImg, .smallLiveImg {
+    object-fit: cover;
+    width: 100%;
     height: 250px;
   }
 
-  .smallImg {
-    object-fit: cover;
-    overflow: hidden;
-    width: 33%;
-  }
+  @media (min-width: 768px) {
+    swiper-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+    }
 
-  .smallLiveImg {
-    object-fit: cover;
-    width: 25%;
+    swiper-slide {
+      flex: 0 0 calc(33.333% - 1rem);
+    }
   }
 </style>
